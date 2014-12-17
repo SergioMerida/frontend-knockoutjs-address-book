@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+ 	 <!-- Jquery -->
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+ <script type='text/javascript' src='knockout/knockout-3.2.0.js'></script>
+ <!-- Bootstrap core CSS -->
+ <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+ <link href="css/styles.css" rel="stylesheet">
+
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<h1>Address Book</h1>
+				</div><!--col-md-6-->
+			</div><!--row-->
+		</div><!--jumbotron-->
+	</div><!--1st container-->
+
+	<div class="container">
+		<h3>Tasks</h3>
+		<form data-bind="submit: addTask">
+			Add task: <input data-bind="value: newTaskText" placeholder="What needs to be done?" />
+			<button type="submit">Add</button>
+		</form>
+		<ul data-bind="foreach: tasks, visible: tasks().length > 0">
+			<li>
+				<input type="checkbox" data-bind="checked: isDone" />
+				<input data-bind="value: title, disable: isDone" />
+				<a href="#" data-bind="click: $parent.removeTask">Delete</a>
+			</li>
+		</ul>
+		You have <b data-bind="text: incompleteTasks().length">&nbsp;</b> incomplete task(s)
+		<span data-bind="visible: incompleteTasks().length == 0"> - it's beer time!</span>
+		<button data-bind="click: save">Save</button>
+	</div><!--2nd container-->
+			
+	<div class="navbar navbar-default navbar-fixed-bottom">
+ 		<div class="container">
+  			<p class="navbar-text pull-left">Site Built By: Sergio Merida</p>
+  			<a href="https://github.com/SergioMerida" target="blank" class="navbar-btn btn pull-right">Look my Github</a>
+ 		</div><!--container-->
+	</div><!--navbar-->
+	
+	<!--Javascript-->
+	<script src="js/script.js"></script>
+	<!-- Bootstrap -->
+	<script src="bootstrap/js/bootstrap.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
