@@ -1,3 +1,4 @@
+/*Array with the first data in the html*/
 var initialData = [ 	
 { firstName: "Sergio", lastName: "Merida", phones: [ 	
 { type: "Mobile", number: "5050-2121" }] 	
@@ -6,7 +7,8 @@ var initialData = [
 { type: "Mobile", number: "4444-2222" }] 	
 } 	
 ]; 	
- 	
+
+/*Contacts Model where the data goes*/ 	
 var ContactsModel = function(contacts) { 	
  var self = this; 	
  self.contacts = ko.observableArray(ko.utils.arrayMap(contacts, function(contact) { 	
@@ -44,3 +46,5 @@ var ContactsModel = function(contacts) {
 }; 	
  	
 ko.applyBindings(new ContactsModel(initialData));
+/*apply contacts model with the initial data*/
+

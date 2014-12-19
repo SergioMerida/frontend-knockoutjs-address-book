@@ -15,53 +15,66 @@
 
 </head>
 <body>
-	<div class="container"> 	
-		 	 	
+	<div class="container">
  	<div class="row"> 	
- 		<div class="col-md-10">
-			<h2>Contacts</h2> 	
- 			<div class="panel panel-default" id='contactsList'> 	
- 				<table class="table table-bordered contactsEditor"> 	
+ 		<div class="col-md-7">
+			<div data-bind="foreach: contacts">	
+ 			<div class="panel panel-default" id='contactsList'>
+				<div class="panel-heading">Contact</div>
+				<div class="panel-body">
+				<div class="table-responsive"> 	
+ 				<table class="table table-hover contactsEditor"> 	
  					<tr> 	
  						<th>First name</th> 	
- 						<th>Last name</th> 	
- 						<th>Phone numbers</th> 	
+ 						<th>Last name</th>
+						<th>-Write the phone type and phone number-</th>
  					</tr> 	
- 				<tbody data-bind="foreach: contacts"> 	
+ 				<tbody> 	
  					<tr> 	
- 						<td> 	
- 						<input data-bind='value: firstName' />
-							
- 						<div><a href='#' class="btn btn-danger btn-xs" data-bind='click: $root.removeContact'>Delete</a></div> 	
- 						</td> 	
- 						<td><input data-bind='value: lastName' /></td> 	
+ 						<td><input class="form-control" data-bind='value: firstName' /></td> 	
+ 						<td><input class="form-control" data-bind='value: lastName' /></td> 	
  						<td> 	
  				<table> 	
  				<tbody data-bind="foreach: phones"> 	
- 					<tr> 	
- 						<td><input data-bind='value: type' /></td> 	
- 						<td><input data-bind='value: number' /></td> 	
- 						<td><a href='#' class="btn btn-danger btn-xs" data-bind='click: $root.removePhone'>Delete</a></td> 	
+ 					<tr> 
+						<td><input class="form-control" data-bind='value: type'></td>
+						<td>
+							<div class="input-group">
+								<input type="text" class="form-control" data-bind='value: number'>
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button" data-bind='click: $root.removePhone'>Delete</button>
+							  	</span>
+							</div><!-- /input-group -->
+						</td>
  					</tr> 	
- 				</tbody> 	
- 				</table> 	
- 					<a href='#' class="btn btn-success btn-xs" data-bind='click: $root.addPhone'>Add number</a> 	
- 					</td> 	
- 					</tr> 	
- 				</tbody> 	
- 				</table> 	
- 			</div><!--contact list--> 	 	
- 				<p> 	
- 				<button type="button" class="btn btn-success btn-md" data-bind='click: addContact'>Add a contact</button> 
- 				<button type="button" class="btn btn-primary btn-md" data-bind='click: save, enable: contacts().length > 0'>Save to JSON</button> 	
- 				</p> 	
- 	
- 				<textarea class="form-control" data-bind='value: lastSavedJson' rows='5' cols='60' disabled='disabled'> </textarea> 	
- 	
- 			</div><!--col-md-6--> 	
+ 				</tbody><!--foreach phones--> 	
+ 				</table><!--2nd table close-->
+ 					</td><!--3rd column close-->
+ 					</tr>
+					<tr>
+						<td><a href='#' class="btn btn-danger btn-md" data-bind='click: $root.removeContact'>Delete contact</a></td>
+						<td></td>
+						<td><a href='#' class="btn btn-success btn-md" data-bind='click: $root.addPhone'>Add number</a></td>
+					</tr> 	
+ 				</tbody>	
+ 				</table><!--1 st table -->			
+				</div><!--table-responsive-->	
+ 			</div><!--contact list--> 	
+			</div><!--panel-body-->
+			</div><!--panel-->
+ 			</div><!--col-md-7-->
+			<div class="col-md-5">
+				<div class="panel panel-default">
+					<div class="panel-heading">Add and save to json</div>
+					<div class="panel-body">
+ 						<button type="button" class="btn btn-success btn-md" data-bind='click: addContact'>Add a contact</button> 
+ 						<button type="button" class="btn btn-primary btn-md" data-bind='click: save, enable: contacts().length > 0'>Save to JSON</button>
+						<textarea class="form-control" data-bind='value: lastSavedJson' rows='5' cols='60' disabled='disabled'> </textarea>
+					</div><!--panel-body-->
+				</div><!--panel-->
+			</div><!--col-md-5-->	
  		</div><!--row--> 	
- 	</div><!--container--> 	
- 	
+ 	</div><!--container-->
  	
  
 	<br>
