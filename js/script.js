@@ -1,11 +1,9 @@
 var initialData = [ 	
-{ firstName: "Danny", lastName: "LaRusso", phones: [ 	
-{ type: "Mobile", number: "(555) 121-2121" }, 	
-{ type: "Home", number: "(555) 123-4567"}] 	
+{ firstName: "Sergio", lastName: "Merida", phones: [ 	
+{ type: "Mobile", number: "5050-2121" }] 	
 }, 	
-{ firstName: "Sensei", lastName: "Miyagi", phones: [ 	
-{ type: "Mobile", number: "(555) 444-2222" }, 	
-{ type: "Home", number: "(555) 999-1212"}] 	
+{ firstName: "Ramiro", lastName: "Tabarini", phones: [ 	
+{ type: "Mobile", number: "4444-2222" }] 	
 } 	
 ]; 	
  	

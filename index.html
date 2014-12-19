@@ -16,16 +16,9 @@
 </head>
 <body>
 	<div class="container"> 	
-		<div class="jumbotron">
-			<div class="row">  	
-				<div class="col-md-6 col-md-offset-3"> 	
- 					<h1>Address Book</h1>
-				</div>
-			</div> 	
- 		</div> 	 	
- 		
+		 	 	
  	<div class="row"> 	
- 		<div class="col-md-9">
+ 		<div class="col-md-10">
 			<h2>Contacts</h2> 	
  			<div class="panel panel-default" id='contactsList'> 	
  				<table class="table table-bordered contactsEditor"> 	
@@ -37,8 +30,9 @@
  				<tbody data-bind="foreach: contacts"> 	
  					<tr> 	
  						<td> 	
- 						<input data-bind='value: firstName' /> 	
- 						<div><a href='#' class="btn btn-default btn-xs" data-bind='click: $root.removeContact'>Delete</a></div> 	
+ 						<input data-bind='value: firstName' />
+							
+ 						<div><a href='#' class="btn btn-danger btn-xs" data-bind='click: $root.removeContact'>Delete</a></div> 	
  						</td> 	
  						<td><input data-bind='value: lastName' /></td> 	
  						<td> 	
@@ -47,19 +41,19 @@
  					<tr> 	
  						<td><input data-bind='value: type' /></td> 	
  						<td><input data-bind='value: number' /></td> 	
- 						<td><a href='#' class="btn btn-default btn-xs" data-bind='click: $root.removePhone'>Delete</a></td> 	
+ 						<td><a href='#' class="btn btn-danger btn-xs" data-bind='click: $root.removePhone'>Delete</a></td> 	
  					</tr> 	
  				</tbody> 	
  				</table> 	
- 					<a href='#' class="btn btn-default btn-xs" data-bind='click: $root.addPhone'>Add number</a> 	
+ 					<a href='#' class="btn btn-success btn-xs" data-bind='click: $root.addPhone'>Add number</a> 	
  					</td> 	
  					</tr> 	
  				</tbody> 	
  				</table> 	
  			</div><!--contact list--> 	 	
  				<p> 	
- 				<button type="button" class="btn btn-default btn-sm" data-bind='click: addContact'>Add a contact</button> 
- 				<button type="button" class="btn btn-default btn-sm" data-bind='click: save, enable: contacts().length > 0'>Save to JSON</button> 	
+ 				<button type="button" class="btn btn-success btn-md" data-bind='click: addContact'>Add a contact</button> 
+ 				<button type="button" class="btn btn-primary btn-md" data-bind='click: save, enable: contacts().length > 0'>Save to JSON</button> 	
  				</p> 	
  	
  				<textarea class="form-control" data-bind='value: lastSavedJson' rows='5' cols='60' disabled='disabled'> </textarea> 	
@@ -73,10 +67,10 @@
 	<br>
 	<br>
 	<br>			
-	<div class="navbar navbar-default navbar-fixed-bottom">
+	<div class="navbar navbar-inverse navbar-fixed-bottom">
  		<div class="container">
   			<p class="navbar-text pull-left">Site Built By: Sergio Merida</p>
-  			<a href="https://github.com/SergioMerida" target="blank" class="navbar-btn btn pull-right">Look my Github</a>
+  			<a href="https://github.com/SergioMerida" target="blank" class="navbar-btn btn btn-primary pull-right">Look my Github</a>
  		</div><!--container-->
 	</div><!--navbar-->
 	
